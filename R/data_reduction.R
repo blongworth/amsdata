@@ -58,6 +58,7 @@ calcd13c <- function(he1312) {
 #' @param err A vector of errors
 #'
 #' @return A propagated error for the vector.
+#' @export
 #'
 prop_err <- function(err) {
   sqrt(sum(err^2))/length(err)
