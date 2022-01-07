@@ -1,12 +1,6 @@
 context("Data Reduction")
 
-data <- getWheel("CFAMS011421") %>%
-  select(wheel_pos, sample_name, norm_ratio,
-         int_err, ext_err, fm_corr, sig_fm_corr,
-         lg_blk_fm, sig_lg_blk_fm, fm_mb_corr, sig_fm_mb_corr,
-         blank_fm, sig_blank_fm, tot_mass, sig_tot,
-         blank_mass, sig_blank_mass) %>%
-  mutate(max_err = pmax(int_err, ext_err))
+data <- readRDS("CFAMS011421.rds")
 
 context("Large Blank Correction")
 
@@ -92,7 +86,5 @@ test_that("blankErr returns correct blank", {
   expect_equal(blankErr(1,1), 1)
   expect_equal(blankErr(4, 1), 2)
   expect_equal(blankErr(c(2,2)), 1)
-  expect_equal(blankErr(data[c(4, 59), 3]), data[4, 9])
-  expect_equal(blankErr(data[c(4, 59), 3], data[c(4, 59), 18]), data[4, 9])
-
 })
+

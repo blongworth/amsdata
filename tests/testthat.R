@@ -1,4 +1,4 @@
 library(testthat)
-library(amstools)
+library(amsdata)
 
-test_check("amstools")
+test_check("amsdata")

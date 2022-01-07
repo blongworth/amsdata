@@ -5,6 +5,8 @@
 # Find standards
 # Produce normalized data for wheel per target
 
+#' @importFrom dplyr mutate select `%>%`
+NULL
 
 #' Calculate per-block fields
 #'
