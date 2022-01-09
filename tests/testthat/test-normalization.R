@@ -5,3 +5,6 @@ test_that("norm_run works", {
 test_that("norm_snicser works", {
   expect_equal(norm_snicser(1,1,1), 1)
 })
+
+test_that("norm_snicser_err works", {
+})

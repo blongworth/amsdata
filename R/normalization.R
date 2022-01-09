@@ -51,6 +51,32 @@ norm_run_err <- function(sample, standard, sample_err, standard_err,
 #' @export
 #'
 norm_snicser <- function(run_val, std_vals, std_rat = 1.0398) {
-  normstdrat <- mean(std_vals/std_rat)
-  run_val/normstdrat
+  norm_std_rat <- mean(std_vals/std_rat)
+  norm_run <- run_val/norm_std_rat
+}
+
+#' Calculate error of a run, SNICSer style
+#'
+#' @param run_val The ratio of the run to normalize
+#' @param run_err The error of the run to normalize
+#' @param std_vals A vector of standard ratios to normalize with
+#' @param std_rat The standard ratio(s). May be one value for all stds
+#' used or a vector of values for each standard in std_vals, defaults
+#' to OX-I
+#'
+#' @return The error in the normalized ratio of the run
+#' @export
+#'
+#' @examples
+norm_snicser_err <- function(run_val, run_err, std_vals, std_rat = 1.0398) {
+  nstd <- length(std_vals)
+  norm_std_rat <- mean(std_vals / std_rat)
+  norm_run <- run_val / norm_std_rat
+  sum_sig <- sqrt(sum((std_vals / std_rat)^2))
+  sum_sq <- sum((std_vals/std_rat-norm_std_rat)^2)
+  std_err <- sqrt(sum_sq/nstd)
+  run_err <- pmax(norm_run * sum_sig / norm_std_rat / nstd,
+                  norm_run * std_err / norm_std_rat)
+  norm_run_err <- sqrt(run_err^2 + norm_run^2 * run_err^2 / run_val^2)
+  norm_run_err
 }
