@@ -31,3 +31,26 @@ norm_run_err <- function(sample, standard, sample_err, standard_err,
          standard_err^2/standard^2 +
          stdrat_err^2/stdrat^2)
 }
+
+#' Calculate normalized ratio of a run, SNICSer style
+#'
+#' Snicser does things in this order:
+#'
+#' 1. 13C correction (prior to this fn)
+#' 2. Divide ratio of stds by known standard Fm
+#' 3. Average standard ratios
+#' 4. Divide run ratio by normalized avg std ratio
+#'
+#' @param run_val The ratio of the run to normalize
+#' @param std_vals A vector of standard ratios to normalize with
+#' @param std_rat The standard ratio(s). May be one value for all stds
+#' used or a vector of values for each standard in std_vals, defaults
+#' to OX-I
+#'
+#' @return The normalized ratio of the run
+#' @export
+#'
+norm_snicser <- function(run_val, std_vals, std_rat = 1.0398) {
+  normstdrat <- mean(std_vals/std_rat)
+  run_val/normstdrat
+}

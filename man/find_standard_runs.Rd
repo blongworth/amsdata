@@ -4,12 +4,12 @@
 \alias{find_standard_runs}
 \title{Create an index of standard runs}
 \usage{
-find_standard_runs(type, run = NULL)
+find_standard_runs(types, drop = NULL)
 }
 \arguments{
-\item{type}{A character vector of sample type ids where "S" denotes a normalizing standard}
+\item{types}{A character vector of sample type ids where "S" denotes a normalizing standard}
 
-\item{run}{The index of a runs to ignore (to avoid self-normalization)}
+\item{drop}{The index of a runs to ignore (to avoid self-normalization)}
 }
 \value{
 The indexes of standard runs
