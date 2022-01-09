@@ -23,7 +23,7 @@ nearest_standards <- function(run, stds, n) {
 #' @return The indexes of standard runs
 #' @export
 #'
-find_standard_runs <- function(type, run = NULL) {
-  if (!is.null(run)) type[-run]
-  which(type == "S")
+find_standard_runs <- function(types, drop = NULL) {
+  if (!is.null(drop)) types[drop] <- NA
+  which(types == "S")
 }
