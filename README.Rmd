@@ -12,6 +12,10 @@ knitr::opts_chunk$set(
 )
 ```
 
+<!-- badges: start -->
+  [![R-CMD-check](https://github.com/blongworth/amsdata/workflows/R-CMD-check/badge.svg)](https://github.com/blongworth/amsdata/actions)
+<!-- badges: end -->
+
 # amsdata
 
 Amsdata is a (mostly) lab-agnostic package for working with AMS data.
