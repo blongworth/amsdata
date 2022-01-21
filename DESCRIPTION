@@ -17,4 +17,5 @@ Imports:
 RoxygenNote: 7.1.2
 Suggests: 
     testthat
-URL: https://blongworth.github.io/amsdata/
+URL: https://blongworth.github.io/amsdata, https://github.com/blongworth/amsdata
+BugReports: https://github.com/blongworth/amsdata/issues
