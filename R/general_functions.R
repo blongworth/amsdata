@@ -143,11 +143,20 @@ d14c <- function(fm, yc) {
 #'
 rcage <- function(fm) {
   stopifnot(is.numeric(fm))
-
   -8033 * log(fm)
-
 }
 
+#' Calculate radiocarbon age error
+#'
+#' @param fm
+#' @param fm_err
+#'
+#' @return radiocarbon age error in years
+#' @export
+#'
+rc_age_err <- function(fm, fm_err) {
+  sqrt((-8033 * 1/fm)^2 * (fm_err)^2)
+}
 
 #' Calculate Fm
 #'
