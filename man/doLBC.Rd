@@ -14,7 +14,7 @@ doLBC(fmmeas, fmblank, fmstd)
 \item{fmstd}{Accepted Fm of the standard used for normalization}
 }
 \value{
-
+Blank corrected Fm
 }
 \description{
 Apply large blank

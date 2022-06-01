@@ -88,3 +88,8 @@ test_that("blankErr returns correct blank", {
   expect_equal(blankErr(c(2,2)), 1)
 })
 
+test_that("d13C correction returns expected values", {
+  expect_equal(calc_d13c(.0112372), 0) # can't calc error on one meas without error
+  expect_equal(calc_d13c(.01102369), -19, tolerance = 0.0001) # OX-I
+})
+

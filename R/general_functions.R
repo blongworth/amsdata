@@ -148,8 +148,8 @@ rcage <- function(fm) {
 
 #' Calculate radiocarbon age error
 #'
-#' @param fm
-#' @param fm_err
+#' @param fm Fraction modern
+#' @param fm_err Error in the Fm
 #'
 #' @return radiocarbon age error in years
 #' @export

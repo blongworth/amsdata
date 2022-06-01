@@ -12,10 +12,9 @@
 #' @param n number of standard runs
 #' @param self Allow self normalization
 #'
-#' @return
+#' @return A vector of nearest standards
 #' @export
 #'
-#' @examples
 nearest_standards_time <- function(types, times, run, n, self = FALSE) {
   stopifnot(length(types) == length(times))
   drop <- if (self) NULL else run

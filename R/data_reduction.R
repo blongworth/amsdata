@@ -16,7 +16,6 @@ NULL
 #' internal error, and d13C added
 #' @export
 #'
-#' @examples
 calcRaw <- function(data) {
 	data %>%
 	  mutate(
@@ -28,13 +27,14 @@ calcRaw <- function(data) {
 
 #' Correct raw 14/12 for fractionation using 13/12 ratio
 #'
+#' Uses SNICSer method
+#'
 #' @param he1412 Raw measured 14/12
 #' @param he1312 Raw measured 13/12
 #'
-#' @return
+#' @return 14/12C ratios corrected for fractionation
 #' @export
 #'
-#' @examples
 doCor1412 <- function(he1412, he1312) {
 	he1412 / he1312 ^ 2
 }
@@ -46,9 +46,17 @@ RelErrSq <- (CntTotH - CntTotS) * CntTotH ^ 2 / CntTotS ^ 4 +
 cor1412 * sqrt(RelErrSq)
 }
 
-# Calculate d13C
-calcd13c <- function(he1312) {
-	1000 * (he1312 / 1.12372 -1)
+
+#' Calculate d13C
+#'
+#' @param r_unk 13/12 C ratio of the unknowns
+#' @param r_vpdb 13/12 C ratio of VPDB
+#'
+#' @return A vector of d13C values
+#' @export
+#'
+calc_d13c <- function(r_unk, r_vpdb = 0.0112372) {
+	1000 * ((r_unk - r_vpdb) / r_vpdb)
 }
 
 #' Propagate errors

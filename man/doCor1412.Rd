@@ -12,8 +12,8 @@ doCor1412(he1412, he1312)
 \item{he1312}{Raw measured 13/12}
 }
 \value{
-
+14/12C ratios corrected for fractionation
 }
 \description{
-Correct raw 14/12 for fractionation using 13/12 ratio
+Uses SNICSer method
 }

@@ -14,7 +14,7 @@ License: GPL-3 + file LICENSE
 LazyData: TRUE
 Imports:
     dplyr
-RoxygenNote: 7.1.2
+RoxygenNote: 7.2.0
 Suggests: 
     testthat
 URL: https://blongworth.github.io/amsdata, https://github.com/blongworth/amsdata

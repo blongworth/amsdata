@@ -68,7 +68,6 @@ norm_snicser <- function(run_val, std_vals, std_rat = 1.0398) {
 #' @return The error in the normalized ratio of the run
 #' @export
 #'
-#' @examples
 norm_snicser_err <- function(run_val, run_err, std_vals, std_errs, std_rat = 1.0398) {
   nstd <- length(std_vals)
   norm_std_rat <- mean(std_vals / std_rat)

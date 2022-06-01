@@ -7,7 +7,9 @@
 rc_age_err(fm, fm_err)
 }
 \arguments{
-\item{fm_err}{}
+\item{fm}{Fraction modern}
+
+\item{fm_err}{Error in the Fm}
 }
 \value{
 radiocarbon age error in years

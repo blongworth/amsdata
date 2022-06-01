@@ -18,7 +18,7 @@ nearest_standards_time(types, times, run, n, self = FALSE)
 \item{self}{Allow self normalization}
 }
 \value{
-
+A vector of nearest standards
 }
 \description{
 Find nearest standards in time

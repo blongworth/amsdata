@@ -6,10 +6,9 @@
 #' @param fmblank Normalized Fm of the blank
 #' @param fmstd Accepted Fm of the standard used for normalization
 #'
-#' @return
+#' @return Blank corrected Fm
 #' @export
 #'
-#' @examples
 doLBC <- function(fmmeas, fmblank, fmstd) {
 	fmmeas - fmblank * (fmstd - fmmeas) / fmstd
 }

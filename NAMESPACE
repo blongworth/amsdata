@@ -2,6 +2,7 @@
 
 export(blankErr)
 export(calcRaw)
+export(calc_d13c)
 export(d14c)
 export(dctofm)
 export(doCor1412)
